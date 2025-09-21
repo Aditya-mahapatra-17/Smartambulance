@@ -1,12 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HeroSection } from "@/components/HeroSection";
+import { ProblemSection } from "@/components/ProblemSection";
+import { SolutionSection } from "@/components/SolutionSection";
+import { ImpactSection } from "@/components/ImpactSection";
+import { TechStackSection } from "@/components/TechStackSection";
+import { CTASection } from "@/components/CTASection";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Update document title and meta
+    document.title = "AI-Powered Smart Ambulance System | Bug Slayers";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Revolutionary AI-powered smart ambulance system for faster emergency response. 50% faster response times, real-time patient monitoring, and smart traffic management.');
+    }
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <HeroSection />
+      <ProblemSection />
+      <SolutionSection />
+      <ImpactSection />
+      <TechStackSection />
+      <CTASection />
     </div>
   );
 };
